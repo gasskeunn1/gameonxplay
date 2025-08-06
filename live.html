@@ -1,157 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Live Event | GameOnX</title>
-  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+  <link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body {
-      background-color: #0e1621;
-      color: #fff;
-      font-family: sans-serif;
-      padding: 0;
-      margin: 0;
-    }
-
-    .player-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 1rem;
-    }
-
-    .video-js {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      background-color: rgba(255, 255, 255, 0.04);
-      border-radius: 10px;
-      overflow: hidden;
-      padding: 0;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-
-    .card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .card-body {
-      padding: 0.5rem 1rem;
-    }
-
-    .live-badge {
-      background-color: red;
-      color: white;
-      font-size: 12px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      display: inline-block;
-      animation: blink 1s infinite;
-      margin-bottom: 5px;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .watch-btn {
-      width: 100%;
-      padding: 8px;
-      background: #e74c3c;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .card-time {
-      font-size: 12px;
-      color: #ccc;
-      margin-top: 6px;
-    }
-  </style>
 </head>
-<body>
+<body class="page-wrapper">
 
-  <!-- PLAYER -->
-  <div class="player-container">
-    <video id="livePlayer" class="video-js vjs-default-skin" controls preload="auto" data-setup='{}'></video>
-  </div>
+  <main class="content">
+    <!-- Video.js Player -->
+    <div class="video-container">
+      <video id="mainPlayer" class="video-js vjs-default-skin vjs-fluid" controls preload="auto" data-setup='{}'>
+        <source src="https://example.com/sample.m3u8" type="application/x-mpegURL" />
+      </video>
+    </div>
 
-  <!-- KARTU LIVE -->
-  <div class="grid" id="matchList">
-    <!-- Kartu streaming di-generate dengan JS -->
-  </div>
+    <!-- Grid Kartu Pertandingan -->
+    <section id="liveCards" class="card-container" style="margin-top: 2rem;"></section>
+  </main>
 
-  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
-  <script>
-    const player = videojs('livePlayer');
+  <footer class="footer">
+    © 2025 GameOnX
+  </footer>
 
-    // Fungsi atur streaming
-    function playStream(src) {
-      player.src({ src: src, type: 'application/x-mpegURL' });
-      player.play();
-    }
-
-    // Fungsi konversi waktu ke lokal user
-    function formatTime(iso) {
-      const dt = new Date(iso);
-      return dt.toLocaleString('id-ID', {
-        weekday: 'short',
-        day: '2-digit',
-        month: 'short',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-        timeZoneName: 'short'
-      });
-    }
-
-    // Load match dari JSON
-    fetch('data/matches.json')
-      .then(res => res.json())
-      .then(data => {
-        const now = new Date();
-        data.sort((a, b) => new Date(a.start) - new Date(b.start));
-        const container = document.getElementById('matchList');
-
-        data.forEach(match => {
-          const start = new Date(match.start);
-          const end = new Date(start.getTime() + 2 * 60 * 60 * 1000); // estimasi 2 jam
-
-          const isLive = now >= start && now <= end;
-
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.innerHTML = `
-            <img src="${match.poster}" alt="${match.title}">
-            <div class="card-body">
-              ${isLive ? `<div class="live-badge">🔴 LIVE</div>` : ''}
-              <h4 style="margin: 0 0 5px 0;">${match.title}</h4>
-              <div class="card-time">${isLive ? '' : formatTime(match.start)}</div>
-              <button class="watch-btn" onclick="playStream('${match.src}')">Tonton</button>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-      });
-  </script>
+  <script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+  <script src="assets/js/live.js"></script>
 </body>
 </html>
