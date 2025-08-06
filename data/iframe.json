@@ -1,7 +1,14 @@
 [
   {
-    "title": "BeIN Sports 1",
-    "src": "https://example.com/channel.html",
-    "poster": "assets/img/bein1.jpg"
+    "title": "BeIN Sports 1 US",
+    "src": "//cdn.stmify.com/embed-free.php?id=Bein_Sports_1_US",
+    "poster": "assets/img/bein1.jpg",
+    "type": "sport"
+  },
+  {
+    "title": "KleanPlay Channel",
+    "src": "https://kleanplay.shop/embed/afdb73c451239369681c5e34207bf17a",
+    "poster": "assets/img/kleanplay.jpg",
+    "type": "general"
   }
 ]
