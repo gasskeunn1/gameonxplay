@@ -1,4 +1,374 @@
-[
+[ 
+  {
+    "name": "Bein Sports USA",
+    "poster": "https://assets-us-01.kc-usercontent.com/31dbcbc6-da4c-0033-328a-d7621d0fa726/1318873e-8501-4f79-bb69-182d741cf9ad/beIN%20SPORTS%20Portada.jpg?ver=03-06-2025?w=3840&q=75",
+    "src": "https://kleanplay.shop/embed/afdb73c451239369681c5e34207bf17a"
+  },  
+  {
+    "name": "BeIN Sports 1",
+    "poster": "https://stmify.com/wp-content/uploads/2025/01/472-s-1024x576.webp",
+    "src": "//cdn.stmify.com/embed-free.php?id=Bein_Sports_1_US"
+  },
+  {
+    "name": "BeIN Sports 2",
+    "poster": "https://stmify.com/wp-content/uploads/2025/01/473-s-1024x576.webp",
+    "src": "//cdn.stmify.com/embed-free.php?id=Bein_Sports_2_US"
+  },  
+  {
+    "name": "BeIN Sports 3",
+    "poster": "https://stmify.com/wp-content/uploads/2025/01/474-s-1024x576.webp",
+    "src": "//cdn.stmify.com/embed-free.php?id=Bein_Sports_3_US"
+  },  
+  {
+    "name": "CBS Sports Network",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/cbssports.png",
+    "src": "https://kleanplay.shop/embed/kD4hG2fW9pA7uN1bS8mL5yQ0cX6oZr"
+  },
+  {
+    "name": "CBS Sports Golazo Network",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/cbsgolazo.png",
+    "src": "https://kleanplay.shop/embed/CESwuPhe1iSlp6ray6nEMozLtR4X7w4b"
+  },
+  {
+    "name": "DAZN 1 UK",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/dazn1.png",
+    "src": "https://kleanplay.shop/embed/29f80fe360ea09758cda99ec2eb61fd2"
+  },
+  {
+    "name": "ESPN",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/espn.png",
+    "src": "https://kleanplay.shop/embed/tgcyutly3zujtd3bgef8nevyy5v5n301"
+  },
+  {
+    "name": "ESPN2",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/296-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/zL7vB5kT3aO1gR8iX4nF6wP9dY2uHs"
+  },
+   {
+    "name": "ESPN3",
+    "poster": "https://stmify.com/wp-content/uploads/2025/01/482-s-1024x576.webp",
+    "src": "//cdn.stmify.com/embed-free.php?id=ESPN_3"
+  },
+   {
+    "name": "ESPN4",
+    "poster": "https://stmify.com/wp-content/uploads/2025/01/483-s-1024x576.webp",
+    "src": "https://cdn.stmify.com/embed-free.php?id=ESPN_4"
+  }, 
+  {
+    "name": "ESPNU",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/espnu.png",
+    "src": "https://kleanplay.shop/embed/oI3uC8jF6yP2bW0zQ9nA5sM7lX1eRt"
+  },
+  {
+    "name": "ESPNews",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/espnews.png",
+    "src": "https://kleanplay.shop/embed/hN9eS4rZ1wM7fC3vJ0aX8pG2yQ5bUi"
+  },
+  {
+    "name": "ESPN Deportes",
+    "poster": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM9bynG5EqEAjpl6p_XoqoTHV_McZyT3W_VwszgCDX8-4yyhh8CqPQpa4p8cFtqMQcxy0t4RZwjYZST7Zkb4Fon2JyjhfGBR2x_5GsXzrxKWb2bbxihMpeccjgU9uFFn9JM8BKlS9b7Qs/s1119/ESPN+Deportes.png",
+    "src": "https://kleanplay.shop/embed/45cb98f6ff304e742c65ec6a3b5d087f"
+  },
+  {
+    "name": "Fox Deportes",
+    "poster": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/fox-sports-deportes-flat-us.png",
+    "src": "https://kleanplay.shop/embed/26f350e4a688a9a15a10f1c76712551f"
+  },
+  {
+    "name": "Fox Soccer Plus",
+    "poster": "https://i.imgur.com/BLYNHFQ.png",
+    "src": "https://kleanplay.shop/embed/trAbIqUqIYicRlcHuri1LwenehacrowU"
+  },
+  {
+    "name": "Fox Sports 501",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fox501.png",
+    "src": "https://kleanplay.shop/embed/2460d86d3892c5f73fb23a159ec07a73"
+  },
+  {
+    "name": "Fox Sports 502",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fox502.png",
+    "src": "https://kleanplay.shop/embed/c781d5bf532f568fb2770c0a8afbf808"
+  },
+  {
+    "name": "Fox Sports 503",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fox503.png",
+    "src": "https://kleanplay.shop/embed/6700ac25ea0d4068bcfc953bf9ea0444"
+  },
+  {
+    "name": "Fox Sports 504",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fox504.png",
+    "src": "https://kleanplay.shop/embed/be3900a8819013eef554d9aeee14b9bd"
+  },
+  {
+    "name": "Fox Sports 505",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fox505.png",
+    "src": "https://kleanplay.shop/embed/58582ebdda51b171777a15c61e74a089"
+  },
+  {
+    "name": "Fox Sports 506",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fox506.png",
+    "src": "https://kleanplay.shop/embed/ac0dfaf43b236054ea5ebe5862b68d00"
+  },
+  {
+    "name": "FS1",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fs1.png",
+    "src": "https://kleanplay.shop/embed/j7xysrst3ytbc4h50of84mmbyrn4ba9v"
+  },
+  {
+    "name": "FS2",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/fs2.png",
+    "src": "https://kleanplay.shop/embed/9bfdo7kxd45sst08hbuh6rwhkykmitwb"
+  },
+  {
+    "name": "LaLiga TV",
+    "poster": "https://pbs.twimg.com/profile_images/1747989339764572160/7nxm03-2_400x400.jpg",
+    "src": "https://kleanplay.shop/embed/pajip6maru1rlcoz1qizebitocof4aP7"
+  },
+  {
+    "name": "LFC TV",
+    "poster": "https://i.imgur.com/bvZ56Ev.jpeg",
+    "src": "https://kleanplay.shop/embed/6fad2dc57f9f733c48f8c35ba8aeb119"
+  },
+  {
+    "name": "MLB Network",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/mlb.png",
+    "src": "https://kleanplay.shop/embed/dd2b541cd3c0f5e547f9a7cdd4c2cb06"
+  },
+  {
+    "name": "MUTV",
+    "poster": "https://stmify.com/wp-content/uploads/2024/08/73-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/ebcdba09e8a64f24e07c4d9b67267753"
+  },
+  {
+    "name": "NBA TV",
+    "poster": "https://awfulannouncing.com/wp-content/uploads/sites/94/2025/06/nba-tv-2022.jpg",
+    "src": "https://kleanplay.shop/embed/T1ag4xopruwaFuThuwUS7lNI4HeTucot"
+  },
+  {
+    "name": "NBC",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/nbc.png",
+    "src": "https://kleanplay.shop/embed/maqOnut62tRoHESac2r8ca9ay9b72hAw"
+  },
+  {
+    "name": "NBC GOLF",
+    "poster": "https://www.newscaststudio.com/wp-content/uploads/2022/03/new-golf-channel-logo-pga.jpg",
+    "src": "https://kleanplay.shop/embed/1e679fd7988d232373821f9670a1310f"
+  },
+  {
+    "name": "NBC Sports California",
+    "poster": "https://i.imgur.com/Q9Uv160.jpeg",
+    "src": "https://kleanplay.shop/embed/db42b951b60b85a60a3511ac0afcd382"
+  },
+  {
+    "name": "NBC Sports Bay Area",
+    "poster": "https://stmify.com/wp-content/uploads/2025/04/583-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/5411235d278f9abfce9db28c140374d5"
+  },
+  {
+    "name": "NBC Sports Boston",
+    "poster": "https://stmify.com/wp-content/uploads/2025/03/582-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/DF01290A3852048FA5C6688724BCE1FA"
+  },
+  {
+    "name": "NBC Sports Philadelphia",
+    "poster": "https://stmify.com/wp-content/uploads/2025/04/584-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/b46c64f505d77d9c3ba37c2f3037f0f3"
+  },
+  {
+    "name": "NFL Network",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/nfl.png",
+    "src": "https://kleanplay.shop/embed/prarEpRlcrI3On2nOs6upr5fujozOtRo"
+  },
+  {
+    "name": "Premier Sports 1 IE",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/permier1.png",
+    "src": "https://kleanplay.shop/embed/aE5dT9yH2uJ8gP1zWn7fK4oL6mV3cB"
+  },
+  {
+    "name": "Premier Sports 2 IE",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/permier2.png",
+    "src": "https://kleanplay.shop/embed/sY1bX6cA8rM3wQ7iN9jV2pE5hU0lGf"
+  },
+  {
+    "name": "Rally TV",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/rally.png",
+    "src": "https://kleanplay.shop/embed/fY2pQ8uB5zJ1wN6aL3sC7mX0vR9dHi"
+  },
+  {
+    "name": "Sky Sport 1 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/10/216-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/8f9b6c2d1e4a7890f3a5b1c8d7e6f4a3"
+  },
+  {
+    "name": "Sky Sport 2 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/10/231-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6"
+  },
+  {
+    "name": "Sky Sport 3 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/10/255-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b"
+  },
+  {
+    "name": "Sky Sport 4 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/272-s-300x169.webp",
+    "src": "https://kleanplay.shop/embed/c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8"
+  },
+  {
+    "name": "Sky Sport 5 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/273-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d"
+  },
+  {
+    "name": "Sky Sport 6 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/278-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/f1e2d3c4b5a698786543210fedcba987"
+  },
+  {
+    "name": "Sky Sport 7 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/289-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d"
+  },
+  {
+    "name": "Sky Sport 8 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/305-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/8f9b6c2d1e4a7890f3a5b1c8d7e6f4a3"
+  },
+  {
+    "name": "Sky Sport 9 NZ",
+    "poster": "https://stmify.com/wp-content/uploads/2024/11/306-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/8f9b6c2d1e4a7890f3a5b1c8d7e6f4a3"
+  },
+  {
+    "name": "Sky Sports Action",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skysportsaction.png",
+    "src": "https://kleanplay.shop/embed/wra2wlraTrewrAwohlsiCr0kUpHlswuc"
+  },
+  {
+    "name": "Sky Sport Bundesliga",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skybundesliga.png",
+    "src": "https://kleanplay.shop/embed/wramespicr0swivlb9hAserldOthofas"
+  },
+  {
+    "name": "Sky Sports Cricket",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skycricket.png",
+    "src": "https://kleanplay.shop/embed/j5ru6icHofROsespidec64w0s7lgo8ot"
+  },
+  {
+    "name": "Sky Sports Football",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skyfootball.png",
+    "src": "https://kleanplay.shop/embed/zuw3aYlboraPaStUP4o5ropHlbrospev"
+  },
+  {
+    "name": "Sky Sports F1",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skyf1.png",
+    "src": "https://kleanplay.shop/embed/888520f36cd94c5da4c71fddc1a5fc9b"
+  },
+  {
+    "name": "Sky Sports Golf",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skygolf.png",
+    "src": "https://kleanplay.shop/embed/juDiYAyaWljAtH55usw2sWogINI49kIY"
+  },
+  {
+    "name": "Sky Sports Main Event",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skymainevent.png",
+    "src": "https://kleanplay.shop/embed/4reStAcaHuraStIc3o7rOdRAprEy2glB"
+  },
+  {
+    "name": "Sky Sports Mix",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skymix.png",
+    "src": "https://kleanplay.shop/embed/phAjl4we7iw0agitOpro8Rlcrotrufre"
+  },
+  {
+    "name": "Sky Sport MotoGP",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skygp.png",
+    "src": "https://kleanplay.shop/embed/1c6f53f565af34b3099d28adba983591"
+  },
+  {
+    "name": "Sky Sports News",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skysportnews.png",
+    "src": "https://kleanplay.shop/embed/ZiProtriRlspiriBrI2oProjohAfretA"
+  },
+  {
+    "name": "Sky Sports Premier League",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skyleague.png",
+    "src": "https://kleanplay.shop/embed/swapr5jlpHidrlfR65ofRi8a0itHI6oc"
+  },
+  {
+    "name": "Sky Sports Racing",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skyracing.png",
+    "src": "https://kleanplay.shop/embed/x5Dodrl6Ro21RUprudEQAFRUTEfLPhec"
+  },
+  {
+    "name": "Sky Sports Tennis",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/skytennis.png",
+    "src": "https://kleanplay.shop/embed/3271469af3414e0e303060c2251484c8"
+  },
+  {
+    "name": "Tennis Channel",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/tennischannel.png",
+    "src": "https://kleanplay.shop/embed/671644cddc7ee3158d3291c88ec8a1a1"
+  },
+  {
+    "name": "TNT",
+    "poster": "https://r2.thesportsdb.com/images/media/channel/logo/16rsdr1657046269.png",
+    "src": "https://kleanplay.shop/embed/QibeMAS7LSWitHlwOdU4ozablj8ZunO4"
+  },
+  {
+    "name": "TNT Sports 1",
+    "poster": "https://images.trutv.com/tru/$dyna_params/https%3A%2F%2Fi.cdn.trutv.com%2Fassets%2Ftru%2Fprod%2Fimages%2F2024%2F03%2FTNTSports-1600x900.jpg",
+    "src": "https://kleanplay.shop/embed/FrofUdRljoCLdruGUdR295IfisTlsW1w"
+  },
+  {
+    "name": "TNT Sports 2",
+    "poster": "https://images.trutv.com/tru/$dyna_params/https%3A%2F%2Fi.cdn.trutv.com%2Fassets%2Ftru%2Fprod%2Fimages%2F2024%2F03%2FTNTSports-1600x900.jpg",
+    "src": "https://kleanplay.shop/embed/c5phutHUkothlwRudRO8rosaS3B64ini"
+  },
+  {
+    "name": "TNT Sports 3",
+    "poster": "https://images.trutv.com/tru/$dyna_params/https%3A%2F%2Fi.cdn.trutv.com%2Fassets%2Ftru%2Fprod%2Fimages%2F2024%2F03%2FTNTSports-1600x900.jpg",
+    "src": "https://kleanplay.shop/embed/SodrItO5WeQeFraDRoQa900eSw68I9LG"
+  },
+  {
+    "name": "TNT Sports 4",
+    "poster": "https://images.trutv.com/tru/$dyna_params/https%3A%2F%2Fi.cdn.trutv.com%2Fassets%2Ftru%2Fprod%2Fimages%2F2024%2F03%2FTNTSports-1600x900.jpg",
+    "src": "https://kleanplay.shop/embed/8esiM7BRatIQ3cAdaxes34tesIbrOpOp"
+  },
+  {
+    "name": "TSN 1",
+    "poster": "https://stmify.com/wp-content/uploads/2025/03/576-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/4a1b2c3d5e6f7890a1b2c3d4e5f67890"
+  },
+  {
+    "name": "TSN 2",
+    "poster": "https://stmify.com/wp-content/uploads/2025/03/577-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/8b9c0d1e2f3a4b5c6d7e8f90a1b2c3d4"
+  },
+  {
+    "name": "TSN 3",
+    "poster": "https://stmify.com/wp-content/uploads/2025/03/578-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/e5f6a7b8c9d0e1f2a3b4c5d6e7f890a1"
+  },
+  {
+    "name": "TSN 4",
+    "poster": "https://stmify.com/wp-content/uploads/2025/03/579-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8"
+  },
+  {
+    "name": "TSN 5",
+    "poster": "https://stmify.com/wp-content/uploads/2025/03/580-s-1024x576.webp",
+    "src": "https://kleanplay.shop/embed/8a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d"
+  },
+  {
+    "name": "TUDN",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/tudn.png",
+    "src": "https://kleanplay.shop/embed/397e9c05f4ec89df258ad5d197b5ec94"
+  },
+  {
+    "name": "TYC Sports Internacional",
+    "poster": "https://file.garden/aEH73g2_nCZCUuwA/tyc.png",
+    "src": "https://kleanplay.shop/embed/cA2AcLspucEmI750LcLguxAFR9jU7Rln"
+  },  
   {
     "title": "BeIN Sports 1 US",
     "src": "//cdn.stmify.com/embed-free.php?id=Bein_Sports_1_US",
