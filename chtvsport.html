@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Channel TV</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .iframe-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <img src="assets/img/logo.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#donate">Donasi</a>
+      <a href="#join">Join Group</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1 id="iframe-title">Loading Channel...</h1>
+    <iframe id="tvIframe" class="iframe-container" allowfullscreen></iframe>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const src = urlParams.get("src");
+    const title = urlParams.get("title");
+
+    document.getElementById("iframe-title").innerText = title || "Channel TV";
+    document.getElementById("tvIframe").src = src || "about:blank";
+  </script>
+</body>
+</html>
