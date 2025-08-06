@@ -3,29 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Event | GameOnX</title>
-  <link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Live Streaming | GameOnX</title>
+  <link rel="stylesheet" href="https://vjs.zencdn.net/8.3.0/video-js.css" />
+  <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-quality-selector-hls/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-http-streaming@latest/dist/videojs-http-streaming.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.7/dist/forms.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: white;
+    }
+    .logo img {
+      height: 32px;
+    }
+    .header-buttons a {
+      margin-left: 0.75rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .badge-title {
+      background-color: #dc2626;
+      color: white;
+      padding: 0.3rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .video-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin-bottom: 1rem;
+    }
+    .video-js {
+      width: 100%;
+      height: 480px;
+    }
+    .quality-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .quality-buttons button {
+      background-color: #1e293b;
+      color: white;
+      border: 1px solid #475569;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .quality-buttons button:hover {
+      background-color: #334155;
+    }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    .card {
+      background-color: rgba(30, 41, 59, 0.6);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #0ea5e9;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-title {
+      font-size: 0.875rem;
+      padding: 0.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    .card-time {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .card-btn {
+      margin: 0.5rem;
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      padding: 1rem 0;
+      border-top: 1px solid #334155;
+    }
+  </style>
 </head>
-<body class="page-wrapper">
+<body>
 
-  <main class="content">
-    <!-- Video.js Player -->
-    <div class="video-container" style="max-width: 1000px; margin: auto;">
-      <video id="mainPlayer" class="video-js vjs-default-skin" controls preload="auto" data-setup='{}' style="width: 100%; max-height: 500px;">
-        <source src="https://example.com/sample.m3u8" type="application/x-mpegURL" />
-      </video>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="GameOnX Logo">
+      GameOnX
+    </a>
+    <div class="header-buttons">
+      <a href="https://chat.whatsapp.com/" target="_blank">Join Grup</a>
+      <a href="https://saweria.co/" target="_blank">Donasi</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="badge-title">🔴 LIVE STREAMING</div>
+
+    <div class="video-wrapper">
+      <video id="mainPlayer" class="video-js vjs-default-skin" controls preload="auto" poster="assets/logotvgonx.png"></video>
     </div>
 
-    <!-- Grid Kartu Pertandingan -->
-    <section id="liveCards" class="card-container" style="margin-top: 2rem;"></section>
-  </main>
+    <div class="quality-buttons">
+      <button onclick="setQuality('auto')">Auto</button>
+      <button onclick="setQuality(360)">360p</button>
+      <button onclick="setQuality(540)">540p</button>
+      <button onclick="setQuality(720)">720p</button>
+      <button onclick="setQuality(1080)">1080p</button>
+    </div>
 
-  <footer class="footer">
+    <div id="liveCards" class="cards-container"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
     © 2025 GameOnX
   </footer>
 
-  <script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
-  <script src="assets/js/live.js"></script>
+  <script src="live.js"></script>
+  <script>
+    function setQuality(label) {
+      const player = videojs('mainPlayer');
+      const levels = player.qualityLevels();
+
+      for (let i = 0; i < levels.length; i++) {
+        levels[i].enabled = label === 'auto' ? true : levels[i].height === label;
+      }
+    }
+
+    videojs('mainPlayer').ready(function () {
+      this.qualityLevels();
+    });
+  </script>
 </body>
 </html>
