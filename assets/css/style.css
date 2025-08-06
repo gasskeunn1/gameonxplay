@@ -73,3 +73,38 @@ footer {
   background-color: #101520;
   color: #888;
 }
+.simple-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.menu-box {
+  background-color: #1e293b; /* navy dark */
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: white;
+  width: 220px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #00bfff44;
+}
+
+.menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.menu-desc {
+  font-size: 14px;
+  color: #ccc;
+}
+
