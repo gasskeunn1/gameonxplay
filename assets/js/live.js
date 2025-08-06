@@ -7,12 +7,17 @@ fetch('data/matches.json')
 
     data.sort((a, b) => new Date(a.start) - new Date(b.start));
 
+    let cardCount = 0;
+    const maxCards = 15; // 5 baris × 3 kolom
+
     data.forEach(item => {
+      if (cardCount >= maxCards) return;
+
       const startTime = new Date(item.start);
       const isLive = now >= startTime && now <= new Date(startTime.getTime() + 3 * 60 * 60 * 1000); // 3 jam tayang
 
       const timeText = isLive
-        ? `<span class="live-badge">🔴 LIVE</span>`
+        ? `<span class="live-badge animate-pulse text-red-500">🔴 LIVE</span>`
         : startTime.toLocaleString('id-ID', {
             weekday: 'short', day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit',
             timeZoneName: 'short'
@@ -27,6 +32,8 @@ fetch('data/matches.json')
         <button class="card-btn" onclick="playStream('${item.src}')">Tonton</button>
       `;
       container.appendChild(card);
+
+      cardCount++;
     });
   });
 
