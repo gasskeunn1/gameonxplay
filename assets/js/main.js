@@ -1,19 +1,5 @@
-// Load data dari JSON
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("data/matches.json")
-    .then((res) => res.json())
-    .then((data) => {
-      const container = document.getElementById("live-events");
-      data.forEach((match) => {
-        container.innerHTML += `
-          <div class="card" onclick="location.href='live.html?src=${encodeURIComponent(match.src)}&title=${encodeURIComponent(match.title)}'">
-            <img src="${match.poster}" alt="${match.title}" />
-            <div class="card-title">${match.title}</div>
-          </div>
-        `;
-      });
-    });
-
+// Untuk chtv.html (semua channel)
+if (document.getElementById("tv-channels")) {
   fetch("data/iframe.json")
     .then((res) => res.json())
     .then((channels) => {
@@ -27,4 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
       });
     });
-});
+}
+
+// Untuk chtvsport.html (khusus type: sport)
+if (document.getElementById("sport-channels")) {
+  fetch("data/iframe.json")
+    .then((res) => res.json())
+    .then((channels) => {
+      const container = document.getElementById("sport-channels");
+      channels
+        .filter((ch) => ch.type === "sport")
+        .forEach((channel) => {
+          container.innerHTML += `
+            <div class="card" onclick="location.href='chtvsport.html?src=${encodeURIComponent(channel.src)}&title=${encodeURIComponent(channel.title)}'">
+              <img src="${channel.poster}" alt="${channel.title}" />
+              <div class="card-title">${channel.title}</div>
+            </div>
+          `;
+        });
+    });
+}
