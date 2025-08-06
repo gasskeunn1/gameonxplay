@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | TV Live Stream</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <title>Home | GameOnX</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="navbar">
-    <img src="assets/img/logo.png" alt="Logo" class="logo"/>
+    <img src="assets/img/logo.png" alt="Logo" class="logo" />
     <nav>
       <a href="index.html">Home</a>
       <a href="#donate">Donasi</a>
@@ -16,18 +17,28 @@
     </nav>
   </header>
 
+  <!-- Menu Cards -->
   <main class="content">
-    <h1>LIVE EVENT</h1>
-    <div id="live-events" class="card-container"></div>
+    <div class="menu-container">
+      <div class="menu-card" onclick="location.href='live.html'">
+        <img src="assets/img/live.jpg" alt="Live Event" />
+        <div class="menu-title">LIVE EVENT</div>
+      </div>
 
-    <h1>CHANNEL TV SPORT</h1>
-    <div id="tv-channels" class="card-container"></div>
+      <div class="menu-card" onclick="location.href='chtvsport.html'">
+        <img src="assets/img/sport.jpg" alt="Channel TV Sport" />
+        <div class="menu-title">CHANNEL TV SPORT</div>
+      </div>
+
+      <div class="menu-card" onclick="location.href='chtv.html'">
+        <img src="assets/img/tv.jpg" alt="Channel TV" />
+        <div class="menu-title">CHANNEL TV</div>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 GameOnX</p>
+    <p>&copy; 2025 GameOnX - Powered by Micin Project</p>
   </footer>
-
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
