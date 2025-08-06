@@ -5,34 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Live Event | GameOnX</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+  <style>
+    .blink {
+      animation: blinker 1s linear infinite;
+      color: red;
+    }
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-wrapper">
-    <!-- Header -->
-    <header class="navbar">
-      <img src="assets/img/logo.png" alt="Logo" class="logo" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="#donate">Donasi</a>
-        <a href="#join">Join Group</a>
-      </nav>
-    </header>
+  <header class="navbar">
+    <img src="assets/img/logo.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
 
-    <!-- Judul Halaman -->
-    <main class="content">
-      <h1>🔴 LIVE MATCH</h1>
-      <div id="live-container" class="card-container"></div>
-    </main>
+  <main class="content">
+    <h1>Live Event</h1>
+    <div id="live-container" class="card-container"></div>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      © 2025 GameOnX
-    </footer>
-  </div>
+  <footer class="footer">
+    © 2025 GameOnX
+  </footer>
 
-  <!-- Video.js -->
-  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
-  <script src="assets/js/live.js"></script>
+  <script>
+    async function loadMatches() {
+      const response = await fetch("data/matches.json");
+      const matches = await response.json();
+
+      // Sort berdasarkan waktu mulai
+      matches.sort((a, b) => new Date(a.start) - new Date(b.start));
+
+      const container = document.getElementById("live-container");
+
+      const now = new Date();
+      const userOffset = now.getTimezoneOffset() / -60;
+      const labelZona = userOffset === 7 ? "WIB" : userOffset === 8 ? "WITA" : "WIT";
+
+      matches.forEach(match => {
+        const startTime = new Date(match.start);
+        const isLive = now >= startTime;
+
+        const localTime = startTime.toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+          timeZoneName: 'short'
+        });
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <img src="${match.poster}" alt="${match.title}" />
+          <div class="card-title">${match.title}</div>
+          <div style="padding: 0 10px; color: #ccc;">
+            ${isLive ? `<span class="blink">🔴 LIVE</span>` : `🕒 ${localTime.replace("GMT+", "")} ${labelZona}`}
+          </div>
+          <div style="padding: 10px;">
+            <a href="player.html?src=${encodeURIComponent(match.src)}">
+              <button style="width: 100%; padding: 8px; background: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer;">Tonton</button>
+            </a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    loadMatches();
+  </script>
 </body>
 </html>
