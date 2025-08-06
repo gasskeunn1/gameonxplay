@@ -82,7 +82,9 @@ footer {
 }
 
 .menu-box {
-  background-color: #1e293b; /* navy dark */
+  background-color: rgba(255, 255, 255, 0.05); /* transparan gelap */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 1.5rem 2rem;
   text-align: center;
@@ -90,6 +92,7 @@ footer {
   width: 220px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-box:hover {
