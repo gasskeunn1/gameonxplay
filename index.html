@@ -1,45 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | GameOnX</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameOnXtv</title>
+  <link rel="icon" href="assets/gameonx logo 3.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #121212;
+    }
+    header img {
+      height: 40px;
+    }
+    .btn-custom {
+      background-color: #1f6feb;
+      color: white;
+      margin-left: 0.5rem;
+    }
+    .main-title {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    /* Kartu kategori */
+    .category-cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .category-card {
+      background-color: #161b22;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      width: 260px;
+      text-align: center;
+      transition: all 0.3s ease;
+      color: white;
+      text-decoration: none;
+    }
+    .category-card:hover {
+      box-shadow: 0 0 10px #1f6feb88;
+      transform: scale(1.03);
+    }
+    .category-card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .category-card-desc {
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+    .category-icon {
+      font-size: 1rem;
+    }
+
+    .footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2rem;
+      color: #8b949e;
+    }
+    .qr-code {
+      margin-top: 20px;
+      width: 120px;
+      height: 120px;
+      background-color: #222;
+      display: inline-block;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
-  <div class="page-wrapper">
-    <!-- Header -->
-    <header class="navbar">
-      <img src="assets/img/logo.png" alt="Logo" class="logo" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="#donate">Donasi</a>
-        <a href="#join">Join Group</a>
-      </nav>
-    </header>
 
-    <!-- Menu Cards -->
-    <main class="content">
-      <div class="simple-menu">
-        <div class="menu-box" onclick="location.href='live.html'">
-          <div class="menu-title">🔴 LIVE VOLLY</div>
-          <div class="menu-desc">Siaran Langsung Pertandingan.</div>
-        </div>
-        <div class="menu-box" onclick="location.href='chtvsport.html'">
-          <div class="menu-title">📺 CHANNEL SPORT</div>
-          <div class="menu-desc">Channel Olahraga.</div>
-        </div>
-        <div class="menu-box" onclick="location.href='chtv.html'">
-          <div class="menu-title">🌐 CHANNEL TV</div>
-          <div class="menu-desc">Channel Umum dan Hiburan.</div>
-        </div>
-      </div>
-    </main>
+  <!-- Header -->
+  <header>
+    <img src="assets/gameonx logo 3.png" alt="GameOnX Logo" />
+    <div>
+      <a href="#" class="btn btn-custom">Donasi</a>
+      <a href="#" class="btn btn-custom">Group</a>
+    </div>
+  </header>
 
-    <!-- Footer -->
-    <footer class="footer">
-      © 2025 GameOnX
-    </footer>
+  <!-- Judul -->
+  <main>
+    <div class="main-title">GameOnXtv</div>
+
+    <!-- Kartu Navigasi -->
+    <div class="category-cards">
+      <a href="live.html" class="category-card">
+        <div class="category-card-title">
+          <span class="category-icon">🔴</span> LIVE VOLLY
+        </div>
+        <div class="category-card-desc">Siaran Langsung</div>
+      </a>
+
+      <a href="sport.html" class="category-card">
+        <div class="category-card-title">
+          <span class="category-icon">📺</span> CHANNEL SPORT
+        </div>
+        <div class="category-card-desc">Channel Olahraga</div>
+      </a>
+
+      <a href="campur.html" class="category-card">
+        <div class="category-card-title">
+          <span class="category-icon">🌐</span> CHANNEL TV
+        </div>
+        <div class="category-card-desc">Channel Umum dan Hiburan.</div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="qr-code">
+      <!-- Ganti ini dengan <img src="..." alt="QR Code"> jika kamu punya -->
+    </div>
+    <div>@foster(GameOnX)</div>
   </div>
+
 </body>
 </html>
