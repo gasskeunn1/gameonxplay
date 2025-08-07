@@ -2,215 +2,114 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Streaming | GameOnXtv</title>
-  <link rel="icon" href="assets/gameonx logo 3.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live - GameOnXtv</title>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       background-color: #0d1117;
       color: white;
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: sans-serif;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #121212;
+    .blink {
+      animation: blink-animation 1s steps(2, start) infinite;
     }
-    header img {
-      height: 40px;
-    }
-    .btn-nav {
-      background-color: #1f6feb;
-      color: white;
-      margin-left: 0.5rem;
-      padding: 8px 14px;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    .main-title {
-      text-align: center;
-      font-size: 2rem;
-      margin: 1rem 0;
-      font-weight: bold;
-    }
-    .player-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-    video {
-      width: 90%;
-      max-width: 960px;
-      border-radius: 12px;
-      background-color: black;
-    }
-
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 16px;
-      padding: 0 2rem 4rem;
-    }
-    .card {
-      background-color: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 10px #1f6feb88;
-    }
-    .card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-    .card-body {
-      padding: 0.5rem;
-      text-align: center;
-    }
-    .card-body h4 {
-      font-size: 1rem;
-      margin: 0;
-    }
-    .card-body small {
-      font-size: 0.85rem;
-      color: #8b949e;
-    }
-    .live-label {
-      color: red;
-      font-weight: bold;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .footer {
-      text-align: center;
-      color: #8b949e;
-      padding-bottom: 2rem;
-    }
-    .qr-code {
-      width: 120px;
-      height: 120px;
-      background-color: #222;
-      display: inline-block;
-      border-radius: 10px;
-      margin-top: 1rem;
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header>
-    <img src="assets/gameonx logo 3.png" alt="Logo" />
-    <div>
-      <a href="index.html" class="btn-nav">Home</a>
-      <a href="#" class="btn-nav">Donasi</a>
-      <a href="#" class="btn-nav">Group</a>
+  <header class="flex justify-between items-center px-4 py-3 bg-[#161b22] shadow">
+    <div class="flex items-center space-x-3">
+      <img src="assets/logo.png" alt="Logo" class="h-8">
     </div>
+    <nav class="flex space-x-4">
+      <a href="index.html" class="text-white hover:text-blue-400">Home</a>
+      <a href="#" class="text-white hover:text-blue-400">Donasi</a>
+      <a href="#" class="text-white hover:text-blue-400">Group</a>
+    </nav>
   </header>
 
   <!-- Judul -->
-  <div class="main-title">Live</div>
+  <h1 class="text-2xl font-bold mt-6 mb-3 px-4">Live</h1>
 
   <!-- Video Player -->
-  <div class="player-wrapper">
-    <video
-      id="video"
-      poster="assets/gameonx logo 3.png"
-      playsinline
-    ></video>
+  <div class="aspect-video bg-black max-w-6xl mx-auto w-full mb-6">
+    <video id="video" controls class="w-full h-full"></video>
   </div>
 
-  <!-- Kartu Channel -->
-  <div class="cards-container" id="channelCards"></div>
+  <!-- Daftar Channel -->
+  <div id="channel-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 pb-10"></div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <div class="qr-code"></div>
-    <div>@foster(GameOnX)</div>
-  </div>
-
-  <!-- Script -->
   <script>
-    function getZonaWaktuLabel(offset) {
-      switch (offset) {
-        case 420: return "WIB";
-        case 480: return "WITA";
-        case 540: return "WIT";
-        default: return "LOCAL";
-      }
-    }
-
+    const video = document.getElementById("video");
     let hls;
-    let isPlaying = false;
 
-    function playStream(url) {
-      const video = document.getElementById('video');
-
-      if (!isPlaying) {
-        video.setAttribute('controls', true);
-        video.removeAttribute('poster');
-        isPlaying = true;
-      }
-
+    function loadStream(src) {
       if (hls) {
         hls.destroy();
       }
 
       hls = new Hls();
-      hls.loadSource(url);
+      hls.loadSource(src);
       hls.attachMedia(video);
 
       hls.on(Hls.Events.ERROR, function (event, data) {
-        if (data.fatal && data.type === 'networkError') {
-          console.warn('Stream error, reloading...');
-          setTimeout(() => playStream(url), 3000);
+        if (data.fatal) {
+          setTimeout(() => loadStream(src), 3000); // reload after 3s
         }
       });
     }
 
-    fetch('data/live.json')
+    function convertToLocalTime(jadwal) {
+      const options = { weekday: 'short', day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Jakarta' };
+      const waktu = new Date(jadwal + ' GMT+7');
+      const wib = waktu.toLocaleString('id-ID', options) + ' WIB';
+
+      const wita = new Date(waktu.getTime() + 60 * 60 * 1000).toLocaleString('id-ID', options) + ' WITA';
+      const wit = new Date(waktu.getTime() + 2 * 60 * 60 * 1000).toLocaleString('id-ID', options) + ' WIT';
+
+      const userTime = new Date().getTimezoneOffset();
+      if (userTime === -420) return wib; // WIB
+      else if (userTime === -480) return wita; // WITA
+      else return wit; // default WIT
+    }
+
+    function isLive(jadwal) {
+      return new Date() >= new Date(jadwal + ' GMT+7');
+    }
+
+    fetch("data/live.json")
       .then(res => res.json())
-      .then(channels => {
-        channels.sort((a, b) => new Date(a.jadwal) - new Date(b.jadwal));
+      .then(data => {
+        data.sort((a, b) => new Date(a.jadwal) - new Date(b.jadwal));
+        const container = document.getElementById("channel-list");
+        data.forEach(channel => {
+          const div = document.createElement("div");
+          div.className = "bg-[#1c1f26] rounded-lg shadow-lg overflow-hidden text-white flex flex-col";
 
-        const now = new Date();
-        const offset = now.getTimezoneOffset() * -1;
-        const zona = getZonaWaktuLabel(offset);
-        const container = document.getElementById('channelCards');
+          const waktu = convertToLocalTime(channel.jadwal);
+          const liveNow = isLive(channel.jadwal);
 
-        channels.forEach(channel => {
-          const start = new Date(channel.jadwal);
-          const isLive = now >= start;
-
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.onclick = () => playStream(channel.src);
-
-          card.innerHTML = `
-            <img src="${channel.poster}" alt="${channel.name}">
-            <div class="card-body">
-              <h4>${channel.name}</h4>
-              <small>${isLive ? '<span class="live-label">🔴 LIVE</span>' :
-                `Jam ${start.toLocaleTimeString('id-ID', {hour: '2-digit', minute: '2-digit'})} ${zona}`}</small>
+          div.innerHTML = `
+            <img src="${channel.poster}" alt="${channel.name}" class="w-full h-48 object-cover">
+            <div class="p-4 flex flex-col flex-grow">
+              <h2 class="text-sm font-semibold leading-snug mb-2">${channel.name}</h2>
+              <p class="text-sm text-gray-400 mb-4">
+                ${liveNow ? '<span class="text-red-500 blink">🔴 LIVE</span>' : waktu}
+              </p>
+              <button class="mt-auto bg-red-600 hover:bg-red-700 text-white py-2 rounded transition" onclick="loadStream('${channel.src}')">Tonton</button>
             </div>
           `;
-          container.appendChild(card);
+          container.appendChild(div);
         });
       });
   </script>
-
 </body>
 </html>
