@@ -1,143 +1,111 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Streaming | GameOnX</title>
-  <link rel="stylesheet" href="https://vjs.zencdn.net/8.3.0/video-js.css" />
-  <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-quality-selector-hls/dist/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-http-streaming@latest/dist/videojs-http-streaming.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.7/dist/forms.min.css"/>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Streaming | GameOnXtv</title>
+  <link rel="icon" href="assets/gameonx logo 3.png" />
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
     body {
-      background-color: #0f172a;
+      background-color: #0d1117;
       color: white;
       font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
-      background: #1e293b;
-      border-bottom: 1px solid #334155;
+      padding: 1rem 2rem;
+      background-color: #121212;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: bold;
+    header img {
+      height: 40px;
+    }
+    .btn-nav {
+      background-color: #1f6feb;
       color: white;
-    }
-    .logo img {
-      height: 32px;
-    }
-    .header-buttons a {
-      margin-left: 0.75rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background-color: #2563eb;
-      color: white;
+      margin-left: 0.5rem;
+      padding: 8px 14px;
       text-decoration: none;
-      font-size: 0.875rem;
+      border-radius: 6px;
     }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem;
+    .main-title {
       text-align: center;
+      font-size: 2rem;
+      margin: 1rem 0;
+      font-weight: bold;
     }
-    .badge-title {
-      background-color: #dc2626;
-      color: white;
-      padding: 0.3rem 0.75rem;
-      border-radius: 8px;
-      font-size: 0.875rem;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    .video-wrapper {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      margin-bottom: 1rem;
-    }
-    .video-js {
-      width: 100%;
-      height: 480px;
-    }
-    .quality-buttons {
+    .player-wrapper {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
       margin-bottom: 2rem;
     }
-    .quality-buttons button {
-      background-color: #1e293b;
-      color: white;
-      border: 1px solid #475569;
-      padding: 4px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.875rem;
+    video {
+      width: 90%;
+      max-width: 960px;
+      border-radius: 12px;
+      background-color: black;
     }
-    .quality-buttons button:hover {
-      background-color: #334155;
-    }
+
     .cards-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-      margin-bottom: 4rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 0 2rem 4rem;
     }
     .card {
-      background-color: rgba(30, 41, 59, 0.6);
+      background-color: #161b22;
+      border: 1px solid #30363d;
       border-radius: 10px;
       overflow: hidden;
-      border: 1px solid #334155;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      transition: 0.3s;
+      transition: transform 0.2s;
+      cursor: pointer;
     }
     .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 10px #0ea5e9;
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #1f6feb88;
     }
     .card img {
       width: 100%;
-      height: auto;
+      height: 120px;
+      object-fit: cover;
     }
-    .card-title {
-      font-size: 0.875rem;
+    .card-body {
       padding: 0.5rem;
-      font-weight: bold;
-      color: #fff;
-    }
-    .card-time {
-      font-size: 0.75rem;
-      color: #94a3b8;
-    }
-    .card-btn {
-      margin: 0.5rem;
-      background-color: #ef4444;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-size: 0.875rem;
-      cursor: pointer;
-    }
-    footer {
       text-align: center;
-      font-size: 0.75rem;
-      color: #94a3b8;
-      padding: 1rem 0;
-      border-top: 1px solid #334155;
+    }
+    .card-body h4 {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .card-body small {
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+    .live-label {
+      color: red;
+      font-weight: bold;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .footer {
+      text-align: center;
+      color: #8b949e;
+      padding-bottom: 2rem;
+    }
+    .qr-code {
+      width: 120px;
+      height: 120px;
+      background-color: #222;
+      display: inline-block;
+      border-radius: 10px;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -145,54 +113,103 @@
 
   <!-- Header -->
   <header>
-    <a href="index.html" class="logo">
-      <img src="assets/logo.png" alt="GameOnX Logo">
-      GameOnX
-    </a>
-    <div class="header-buttons">
-      <a href="https://chat.whatsapp.com/" target="_blank">Join Grup</a>
-      <a href="https://saweria.co/" target="_blank">Donasi</a>
+    <img src="assets/gameonx logo 3.png" alt="Logo" />
+    <div>
+      <a href="index.html" class="btn-nav">Home</a>
+      <a href="#" class="btn-nav">Donasi</a>
+      <a href="#" class="btn-nav">Group</a>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="badge-title">🔴 LIVE STREAMING</div>
+  <!-- Judul -->
+  <div class="main-title">Live</div>
 
-    <div class="video-wrapper">
-      <video id="mainPlayer" class="video-js vjs-default-skin" controls preload="auto" poster="assets/logotvgonx.png"></video>
-    </div>
-
-    <div class="quality-buttons">
-      <button onclick="setQuality('auto')">Auto</button>
-      <button onclick="setQuality(360)">360p</button>
-      <button onclick="setQuality(540)">540p</button>
-      <button onclick="setQuality(720)">720p</button>
-      <button onclick="setQuality(1080)">1080p</button>
-    </div>
-
-    <div id="liveCards" class="cards-container"></div>
+  <!-- Video Player -->
+  <div class="player-wrapper">
+    <video
+      id="video"
+      poster="assets/gameonx logo 3.png"
+      playsinline
+    ></video>
   </div>
 
+  <!-- Kartu Channel -->
+  <div class="cards-container" id="channelCards"></div>
+
   <!-- Footer -->
-  <footer>
-    © 2025 GameOnX
-  </footer>
+  <div class="footer">
+    <div class="qr-code"></div>
+    <div>@foster(GameOnX)</div>
+  </div>
 
-  <script src="live.js"></script>
   <script>
-    function setQuality(label) {
-      const player = videojs('mainPlayer');
-      const levels = player.qualityLevels();
-
-      for (let i = 0; i < levels.length; i++) {
-        levels[i].enabled = label === 'auto' ? true : levels[i].height === label;
+    function getZonaWaktuLabel(offset) {
+      switch (offset) {
+        case 420: return "WIB";
+        case 480: return "WITA";
+        case 540: return "WIT";
+        default: return "LOCAL";
       }
     }
 
-    videojs('mainPlayer').ready(function () {
-      this.qualityLevels();
-    });
+    let hls;
+    let isPlaying = false;
+
+    function playStream(url) {
+      const video = document.getElementById('video');
+
+      if (!isPlaying) {
+        video.setAttribute('controls', true);
+        video.removeAttribute('poster');
+        isPlaying = true;
+      }
+
+      if (hls) {
+        hls.destroy();
+      }
+
+      hls = new Hls();
+      hls.loadSource(url);
+      hls.attachMedia(video);
+
+      hls.on(Hls.Events.ERROR, function (event, data) {
+        if (data.fatal && data.type === 'networkError') {
+          console.warn('Stream error, reloading...');
+          setTimeout(() => playStream(url), 3000);
+        }
+      });
+    }
+
+    fetch('data/live.json')
+      .then(res => res.json())
+      .then(channels => {
+        channels.sort((a, b) => new Date(a.jadwal) - new Date(b.jadwal));
+
+        const now = new Date();
+        const offset = now.getTimezoneOffset() * -1;
+        const zona = getZonaWaktuLabel(offset);
+        const container = document.getElementById('channelCards');
+
+        channels.forEach(channel => {
+          const start = new Date(channel.jadwal);
+          const isLive = now >= start;
+
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.onclick = () => playStream(channel.src);
+
+          card.innerHTML = `
+            <img src="${channel.poster}" alt="${channel.name}">
+            <div class="card-body">
+              <h4>${channel.name}</h4>
+              <small>${isLive ? '<span class="live-label">🔴 LIVE</span>' :
+                `Jam ${start.toLocaleTimeString('id-ID', {hour: '2-digit', minute: '2-digit'})} ${zona}`}</small>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      });
   </script>
+
 </body>
 </html>
